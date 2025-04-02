@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Dashboard</title>
+    <style>
+      /* Reset default styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .header h1 {
+        font-size: 2.5rem;
+        color: #4e73df;
+      }
+
+      .dashboard {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.2s ease-in-out;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      .card h2 {
+        font-size: 1.25rem;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #2dce89; /* Green color for the stats */
+      }
+
+      .card:nth-child(1) {
+        background-color: #eaf4ff; /* Light blue */
+      }
+
+      .card:nth-child(2) {
+        background-color: #d1f7e3; /* Light green */
+      }
+
+      .card:nth-child(3) {
+        background-color: #fce2b3; /* Light yellow */
+      }
+
+      .card:nth-child(4) {
+        background-color: #f7d7d7; /* Light red */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Social Dashboard</h1>
+      </header>
+
+      <main class="dashboard">
+        <div class="card">
+          <h2>Total Posts</h2>
+          <p class="stat-number" id="total-posts">120</p>
+        </div>
+        <div class="card">
+          <h2>Total Users</h2>
+          <p class="stat-number" id="total-users">10</p>
+        </div>
+        <div class="card">
+          <h2>Total Comments</h2>
+          <p class="stat-number" id="total-comments">350</p>
+        </div>
+        <div class="card">
+          <h2>Total Albums</h2>
+          <p class="stat-number" id="total-albums">25</p>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
