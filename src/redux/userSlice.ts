@@ -9,6 +9,14 @@ export const fetchUser = createAsyncThunk(
   }
 )
 
+export const fetchUserById = createAsyncThunk(
+  "users/fetchUserById",
+  async (id: number) => {
+    const response = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`);
+    return response.data
+  }
+)
+
 
 
 const userSlice = createSlice({
@@ -33,7 +41,19 @@ const userSlice = createSlice({
       .addCase(fetchUser.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message || "Failed to fetch users";
-      });
+      })
+      .addCase(fetchUserById.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchUserById.fulfilled, (state, action) => {
+        state.loading = false;
+        state.user = action.payload
+      })
+      .addCase(fetchUserById.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message || "Failed to fetch user"
+      })
   }
 })
 
